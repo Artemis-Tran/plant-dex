@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 
 const images = [
     { source:require('../assets/images/plant.png') },
-    { source:require('../assets/images/plant.png') },
+    { source:require('../assets/images/pic1.png') },
     { source:require('../assets/images/plant.png') },
     { source:require('../assets/images/plant.png') },
     { source:require('../assets/images/plant.png') },
@@ -20,16 +20,13 @@ let [fontsLoaded] = useFonts({
     InknutAntiqua_900Black,
     });
 
-
 return(
 <SafeAreaView style={styles.safeArea}>
     <View style={styles.titleContainer}>
         <Text style={styles.title}>Plant Dex</Text>
     </View>
     <View style={styles.container}>
-        <Gallery images={images}>
-
-        </Gallery>
+      <Gallery images={images} />
     </View>
     <View style={styles.nav}> 
         <Navbar navigation={navigation} />
@@ -43,6 +40,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     container: {
+        flex: 8, // Takes the majority of the space
         alignItems: 'center',
         justifyContent: 'center',
     },
