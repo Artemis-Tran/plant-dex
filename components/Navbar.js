@@ -3,14 +3,17 @@ import React from 'react';
 import { View, Text, StyleSheet, Button, Image, Alert, TouchableOpacity } from 'react-native';
 
 const Navbar = ({navigation}) => {
-  onButtonPress = () => {
-    Alert.alert("Hello World!")
+  onSettingsButtonPress = () => {
+    navigation.navigate('settings')
   }
   onLogButtonPress = () => {
     navigation.navigate('PlantDex')
   }
   onHomeButtonPress = () => {
     navigation.navigate('Home')
+  }
+  onUserButtonPress = () => {
+    navigation.navigate('User')
   }
   
   return (
@@ -21,10 +24,10 @@ const Navbar = ({navigation}) => {
       <TouchableOpacity style={styles.touchable} onPress={onLogButtonPress}>
         <Image source={require('../assets/images/log.png')} style={styles.button}></Image>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.touchable} onPress={onButtonPress}>
+      <TouchableOpacity style={styles.touchable} onPress={onSettingsButtonPress}>
         <Image source={require('../assets/images/settings.png')} style={styles.button}></Image>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.touchable} onPress={onButtonPress}>
+      <TouchableOpacity style={styles.touchable} onPress={onUserButtonPress}>
         <Image source={require('../assets/images/user.png')} style={styles.button}></Image>
       </TouchableOpacity>
     </View>
