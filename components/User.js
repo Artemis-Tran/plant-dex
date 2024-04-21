@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#b9db92',
     padding: 20,
     alignItems: 'center',
-    // marginBotton:100
+    marginBottom: 50
   },
   headerText: {
     fontSize: 30,
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   detailsContainer: {
     padding: 20,
     paddingBottom: 20,
+    marginBottom: 70
     
   },
   detailsTitle: {

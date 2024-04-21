@@ -4,7 +4,7 @@ import { View, Image, StyleSheet, FlatList } from 'react-native';
 const Gallery = ({ images }) => {
   const renderItem = ({ item }) => (
     <View style={styles.item}>
-      <Image source={item.source} style={styles.image} />
+      <Image source={item.imageURI} style={styles.image} />
     </View>
   );
 
