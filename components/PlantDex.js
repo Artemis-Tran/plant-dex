@@ -1,6 +1,6 @@
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity, FlatList, Alert } from 'react-native';
 import React from 'react';
-import { useFonts, InknutAntiqua_900Black, InknutAntiqua_400Black } from '@expo-google-fonts/inknut-antiqua';
+import { useFonts, InknutAntiqua_900Black} from '@expo-google-fonts/inknut-antiqua';
 import Navbar from "./Navbar";
 
 const PlantDex = ({navigation}) => {
