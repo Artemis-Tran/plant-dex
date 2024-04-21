@@ -10,7 +10,6 @@ return(
     <Text style={styles.title}>Hello World!</Text>
     <Navbar navigation={navigation} />
 </SafeAreaView>
-
 );
 }
 
