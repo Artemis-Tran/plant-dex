@@ -7,8 +7,8 @@ import { useFonts, InknutAntiqua_900Black, InknutAntiqua_400Black } from '@expo-
 
 import Home from './components/Home';
 import PlantDex from './components/PlantDex';
-import User from './user.js';
-import Settings from './settings.js';
+import User from './components/User.js';
+import Settings from './components/Settings.js';
 
 const Stack = createNativeStackNavigator();
 

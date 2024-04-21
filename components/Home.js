@@ -94,7 +94,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingRight: 50,
     paddingLeft: 50,
-    paddingTop: 10
+    paddingTop: 5,
+    paddingBottom: 1,
+    marginBottom: 10,
+    marginTop: 5
   },
   t2: {
     fontSize: 16,
@@ -103,11 +106,13 @@ const styles = StyleSheet.create({
   },
   homeBg: {
     flex:2,
-    height: 400,
+    height: 380,
     resizeMode: 'contain',
   },
   camera: {
     alignSelf: 'center',
+    height: 200,
+    width: 200,
 
   },
   cameraContainer: {
