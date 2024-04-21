@@ -1,8 +1,9 @@
 import { Camera, CameraType, CameraView, useCameraPermissions } from 'expo-camera/next';
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SafeAreaView, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as Permissions from 'expo-permissions';
 
+// const cameraRef = useRef(null);
 
 const CamView = ({navigation}) => {
   const [facing, setFacing] = useState('back');
@@ -21,11 +22,22 @@ const CamView = ({navigation}) => {
   const takePicture = async () => {
 	  if (this.camera) {
 		  const data = await this.camera.takePictureAsync({quality:0.5});
+      // const data = await cameraRef.current.takePictureAsync({ quality: 0.5 });
 		  console.log(data.uri);
+      return data.uri;
 	  }
 	  navigation.navigate("Home")
   };
 
+  const handleCapture = async () => {
+    const uri = await takePicture();
+    if (uri) {
+        console.log("URI obtained, navigating to PlantDex with:", uri); // Debugging line
+        navigation.navigate('PlantDex', { newImageUri: uri });
+    } else {
+        console.error("Failed to obtain URI.");
+    }
+};
 
   function toggleCameraFacing() {
     setFacing(current => (current === 'back' ? 'front' : 'back'));
@@ -40,7 +52,7 @@ const CamView = ({navigation}) => {
           <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
             <Text style={styles.text}>Flip Camera</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={takePicture}>
+          <TouchableOpacity style={styles.button} onPress={handleCapture}>
             <Text style={styles.text}>Take photo</Text>
           </TouchableOpacity>
         </View>

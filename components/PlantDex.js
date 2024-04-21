@@ -1,5 +1,5 @@
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity, FlatList, Alert } from 'react-native';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFonts, InknutAntiqua_900Black} from '@expo-google-fonts/inknut-antiqua';
 
 import Gallery from "./Gallery"
@@ -14,7 +14,35 @@ const images = [
     { source:require('../assets/images/plant.png') },
   ];
 
-const PlantDex = ({navigation}) => {
+const PlantDex = ({route, navigation}) => {
+  const navState = navigation.getState();
+  console.log(navState);
+  console.log(JSON.stringify(navState, null, 2));
+  console.log(route.params)
+  // const newImageUri = navigation?.params?.newImageUri || '../assets/images/plant.png';
+  const { newImageUri } = route.params || { newImageUri: '../assets/images/plant.png' };
+  console.log('SUCCESS', newImageUri);
+
+  // Use state to manage the images array
+  const [galleryImages, setGalleryImages] = useState([
+    require('../assets/images/plant.png'),
+    require('../assets/images/pic1.png'),
+    require('../assets/images/plant.png'),
+    require('../assets/images/plant.png'),
+    require('../assets/images/plant.png'),
+    require('../assets/images/plant.png')
+  ]);
+
+  useEffect(() => {
+    // Check if the newImageUri parameter is passed
+    if (route.params?.newImageUri) {
+        // Replace the first image or any other logic you prefer
+        setGalleryImages(prevImages => [
+            { source: { uri: route.params.newImageUri } },
+            ...prevImages.slice(1)
+        ]);
+    }
+}, [route.params]);
 
 let [fontsLoaded] = useFonts({
     InknutAntiqua_900Black,
@@ -25,8 +53,11 @@ return(
     <View style={styles.titleContainer}>
         <Text style={styles.title}>Plant Dex</Text>
     </View>
+    <View>
+        <Text style={styles.des}>Plants Capture:</Text>
+    </View>
     <View style={styles.container}>
-      <Gallery images={images} />
+      <Gallery images={galleryImages} />
     </View>
     <View style={styles.nav}> 
         <Navbar navigation={navigation} />
@@ -43,6 +74,10 @@ const styles = StyleSheet.create({
         flex: 8, // Takes the majority of the space
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    des: {
+      fontSize: 15,
+      fontFamily: 'InknutAntiqua_900Black',
     },
     titleContainer: {
         backgroundColor: '#b9db92',
