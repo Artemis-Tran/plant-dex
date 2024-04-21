@@ -7,9 +7,7 @@ import { useFonts, InknutAntiqua_900Black, InknutAntiqua_400Black } from '@expo-
 
 import Navbar from './Navbar.js'
 
-const Stack = createNativeStackNavigator();
-
-export default function Home() {
+export default function Home({navigation}) {
   let [fontsLoaded] = useFonts({
     InknutAntiqua_900Black,
   });
@@ -48,7 +46,7 @@ export default function Home() {
               </Text>
             </View>
       </View>
-      <Navbar />
+      <Navbar navigation={navigation} />
       </SafeAreaView>
       
       
@@ -91,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     justifyContent: 'flex-start',
-    padding: 30
+    padding: 50
   },
   t2: {
     fontSize: 16,
@@ -104,14 +102,11 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   camera: {
-    // width: 150,
-    // height: 150,
     alignSelf: 'center',
-    
   },
   cameraContainer: {
     flex: 1,
-    justifyContent: "flex-start",
+    
     
   },
   touchable: {

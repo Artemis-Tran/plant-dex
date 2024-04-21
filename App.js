@@ -7,6 +7,7 @@ import { useFonts, InknutAntiqua_900Black, InknutAntiqua_400Black } from '@expo-
 
 import Navbar from './components/Navbar.js';
 import Home from './components/Home';
+import PlantDex from './components/PlantDex';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ export default function App() {
     <NavigationContainer>
     <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Home'>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="PlantDex" component={PlantDex} />
       </Stack.Navigator>
   </NavigationContainer>
   );

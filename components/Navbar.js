@@ -2,16 +2,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, Image, Alert, TouchableOpacity } from 'react-native';
 
-const Navbar = () => {
+const Navbar = ({navigation}) => {
   onButtonPress = () => {
     Alert.alert("Hello World!")
   }
+  onLogButtonPress = () => {
+    navigation.navigate('PlantDex')
+  }
+  onHomeButtonPress = () => {
+    navigation.navigate('Home')
+  }
+  
   return (
     <View style={styles.navBar}>
-      <TouchableOpacity style={styles.touchable} onPress={onButtonPress}>
+      <TouchableOpacity style={styles.touchable} onPress={onHomeButtonPress}>
         <Image source={require('../assets/images/home.png')} style={styles.button}></Image>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.touchable} onPress={onButtonPress}>
+      <TouchableOpacity style={styles.touchable} onPress={onLogButtonPress}>
         <Image source={require('../assets/images/log.png')} style={styles.button}></Image>
       </TouchableOpacity>
       <TouchableOpacity style={styles.touchable} onPress={onButtonPress}>
@@ -28,10 +35,10 @@ const styles = StyleSheet.create({
   navBar: {
     flexDirection: 'row',
     padding: 10,
-    backgroundColor: '#b9db92',
+    
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    height: 70,
+    
 
   },
   navText: {
@@ -39,6 +46,8 @@ const styles = StyleSheet.create({
     fontFamily: 'InknutAntiqua_900Black',
   },
   button: {
+    height: 75,
+    width: 75,
 
   },
   touchable: {
