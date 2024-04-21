@@ -1,6 +1,15 @@
 import React from 'react';
 import { View, Image, StyleSheet, FlatList } from 'react-native';
 
+const images = [
+  { source:require('../assets/images/plant.png') },
+  { source:require('../assets/images/pic1.png') },
+  { source:require('../assets/images/plant.png') },
+  { source:require('../assets/images/plant.png') },
+  { source:require('../assets/images/plant.png') },
+  { source:require('../assets/images/plant.png') },
+];
+
 const Gallery = ({ images }) => {
   const renderItem = ({ item }) => (
     <View style={styles.item}>
@@ -22,20 +31,19 @@ const Gallery = ({ images }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 10,
   },
   item: {
-    flex: 1,
+    margin: 5,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  image: {
     margin: 5,
     borderRadius: 5,
     overflow: 'hidden',
-  },
-  image: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    aspectRatio: 1, // Ensures that each item is square-shaped
+    height: 100, // Set a fixed height for the grid items
   },
 });
 
