@@ -32,6 +32,11 @@
         {
           "fonts": ["node_modules/@expo-google-fonts/inknut-antiqua/InknutAntiqua_900Black.ttf"]
         }
+      ], [
+        "expo-camera",
+	{
+	  "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+	}
       ]
     ]
   }
