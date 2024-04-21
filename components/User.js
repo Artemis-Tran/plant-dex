@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { useFonts, InknutAntiqua_900Black } from '@expo-google-fonts/inknut-antiqua';
-import Navbar from './components/Navbar.js'
+import Navbar from './Navbar.js'
 
 const User = ({navigation}) => {
   let [fontsLoaded] = useFonts({
@@ -15,7 +15,7 @@ const User = ({navigation}) => {
       </View>
       <View>
       <Image
-        source={require('./assets/images/pp.png')} // Replace with actual path to your plant image
+        source={require('../assets/images/pp.png')} // Replace with actual path to your plant image
         style={styles.userImage}
       />
       </View>
