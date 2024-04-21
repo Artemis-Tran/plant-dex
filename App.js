@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from 'react-native';
+import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { useFonts, InknutAntiqua_900Black, InknutAntiqua_400Black } from '@expo-google-fonts/inknut-antiqua';
 
-import Navbar from './components/navbar.js'
+import Navbar from './components/Navbar.js'
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +15,10 @@ export default function App() {
   });
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
+  }
+
+  onCameraPress = () => {
+    Alert.alert("Hello")
   }
   
   return (
@@ -29,7 +33,9 @@ export default function App() {
       </ImageBackground>
       <View style={styles.contentContainer}>
         <View style={styles.cameraContainer}>
-          <Image source={require('./assets/images/camera.png')} style={styles.camera}></Image>
+          <TouchableOpacity style={styles.touchable} onPress ={onCameraPress}>
+            <Image source={require('./assets/images/camera.png')} style={styles.camera}></Image>
+          </TouchableOpacity>
         </View>
         <View style={styles.bodyContainer}>
               <Text style={styles.t2}>
@@ -43,11 +49,8 @@ export default function App() {
             </View>
       </View>
       <View style={{}}>
-        <Navbar>
-
-        </Navbar>
+        <Navbar />
       </View>
-      
       </SafeAreaView>
          
   );
@@ -71,7 +74,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontFamily: "InknutAntiqua_900Black",
-    marginBottom: 15,
     marginTop: 20,
   },
   contentContainer: {
@@ -102,13 +104,18 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   camera: {
-    width: 150,
-    height: 150,
+    // width: 150,
+    // height: 150,
     alignSelf: 'center',
     
   },
   cameraContainer: {
     flex: 1,
     justifyContent: "flex-start",
-  }
+    
+  },
+  touchable: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
