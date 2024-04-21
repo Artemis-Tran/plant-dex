@@ -7,6 +7,7 @@ import { useFonts, InknutAntiqua_900Black, InknutAntiqua_400Black } from '@expo-
 
 import Home from './components/Home';
 import PlantDex from './components/PlantDex';
+import CamView from './components/CamView';
 import User from './components/User.js';
 import Settings from './components/Settings.js';
 
@@ -17,6 +18,7 @@ export default function App() {
     <NavigationContainer>
     <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Home'>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="CamView" component={CamView} />
         <Stack.Screen name="PlantDex" component={PlantDex} />
         <Stack.Screen name="User" component={User} />
         <Stack.Screen name="Settings" component={Settings} />

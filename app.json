@@ -44,6 +44,11 @@
           "enableMicrophonePermission": true,
           "microphonePermissionText": "$(PRODUCT_NAME) needs access to your Microphone."
         }
+      ], [
+        "expo-camera",
+	{
+	  "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+	}
       ]
     ],
     "extra": {

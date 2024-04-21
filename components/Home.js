@@ -16,7 +16,8 @@ export default function Home({navigation}) {
   }
 
   onCameraPress = () => {
-    Alert.alert("Hello")
+//    Alert.alert("Hello")
+      navigation.navigate("CamView");
   }
   
   return (
