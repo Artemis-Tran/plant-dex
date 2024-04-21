@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Button, Image, Alert, TouchableOpacity } from '
 
 const Navbar = ({navigation}) => {
   onSettingsButtonPress = () => {
-    navigation.navigate('settings')
+    navigation.navigate('Settings')
   }
   onLogButtonPress = () => {
     navigation.navigate('PlantDex')

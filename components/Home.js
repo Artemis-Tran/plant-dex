@@ -26,12 +26,15 @@ export default function Home({navigation}) {
             Touch Grass
           </Text>
         </SafeAreaView>
-        <ImageBackground source={require('../assets/images/home_bg.png')} style={styles.homeBg}>
         
-      </ImageBackground>
+       
+        
+        
       <View style={styles.contentContainer}>
+      <ImageBackground source={require('../assets/images/home_bg.png')} style={styles.homeBg}>
+        </ImageBackground>
         <View style={styles.cameraContainer}>
-          <TouchableOpacity style={styles.touchable} onPress ={onCameraPress}>
+          <TouchableOpacity onPress ={onCameraPress}>
             <Image source={require('../assets/images/camera.png')} style={styles.camera}></Image>
           </TouchableOpacity>
         </View>
@@ -42,7 +45,7 @@ export default function Home({navigation}) {
               <Text style={styles.bodyText}>
                 "Unplug and Recharge: 
                 Take a picture of any plant to learn more about it! 
-                All images get stored in your plant-a-dex! – Go Touch Some Grass!"
+                All images get stored in your plant dex! – Go Touch Some Grass!"
               </Text>
             </View>
       </View>
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   contentContainer: {
-    flex:1,
+    flex: 1,
   },
   bodyText: {
     fontSize: 9,
@@ -89,7 +92,9 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     justifyContent: 'flex-start',
-    padding: 50
+    paddingRight: 50,
+    paddingLeft: 50,
+    paddingTop: 10
   },
   t2: {
     fontSize: 16,
@@ -97,20 +102,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   homeBg: {
-    flex: 1,
+    flex:2,
     height: 400,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   camera: {
     alignSelf: 'center',
+
   },
   cameraContainer: {
     flex: 1,
-    
-    
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   touchable: {
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 });

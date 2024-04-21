@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, ScrollView, Switch, TouchableOpacity, Al
 import { useFonts, InknutAntiqua_900Black } from '@expo-google-fonts/inknut-antiqua';
 import Navbar from './Navbar.js'
 
-const settings = ({navigation}) => {
+const Settings = ({navigation}) => {
   let [fontsLoaded] = useFonts({
     InknutAntiqua_900Black,
   });
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default settings;
+export default Settings;
 
 
     
