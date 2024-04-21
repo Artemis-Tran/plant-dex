@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#b9db92',
     padding: 20,
     alignItems: 'center',
-    marginBotton:100
+    // marginBotton:100
   },
   headerText: {
     fontSize: 30,
     fontFamily: 'InknutAntiqua_900Black',
-    
+    padding: 10,
   },
   userImage: {
     width: '100%',
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   detailsContainer: {
     padding: 20,
     paddingBottom: 20,
+    
   },
   detailsTitle: {
     fontSize: 15,

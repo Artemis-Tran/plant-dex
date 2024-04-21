@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, Switch, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, SafeAreaView, Switch, TouchableOpacity, Alert } from 'react-native';
 import { useFonts, InknutAntiqua_900Black } from '@expo-google-fonts/inknut-antiqua';
 import Navbar from './Navbar.js'
 
@@ -30,7 +30,7 @@ const Settings = ({navigation}) => {
   };
 
    return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerTextBox}>
         <Text style={styles.headerText}>Settings</Text>
       </View>
@@ -56,7 +56,7 @@ const Settings = ({navigation}) => {
         <Text style={styles.buttonText}>Log out</Text>
       </TouchableOpacity>
       <Navbar navigation={navigation} />
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -66,8 +66,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   headerTextBox: { 
-    backgroundColor: '#b9db92', 
-    marginTop: 20, 
+    backgroundColor: '#b9db92',
+    padding: 20,
+    alignItems: 'center',
   },
   headerText: {
     fontSize: 30,
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 10,
     width: '50%',
-    marginBottom: 20,
+    marginBottom: 5,
   },
   buttonText: {
     fontSize: 24,

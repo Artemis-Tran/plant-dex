@@ -27,21 +27,19 @@ export default function Home({navigation}) {
           </Text>
         </SafeAreaView>
         
-       
-        
-        
       <View style={styles.contentContainer}>
+        
       <ImageBackground source={require('../assets/images/home_bg.png')} style={styles.homeBg}>
         </ImageBackground>
         <View style={styles.cameraContainer}>
-          <TouchableOpacity onPress ={onCameraPress}>
+          <TouchableOpacity style={styles.touchable} onPress ={onCameraPress}>
             <Image source={require('../assets/images/camera.png')} style={styles.camera}></Image>
           </TouchableOpacity>
         </View>
         <View style={styles.bodyContainer}>
-              <Text style={styles.t2}>
+              {/* <Text style={styles.t2}>
                 Snap!
-              </Text>
+              </Text> */}
               <Text style={styles.bodyText}>
                 "Unplug and Recharge: 
                 Take a picture of any plant to learn more about it! 
@@ -67,21 +65,20 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     backgroundColor: '#b9db92',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 2,
-   
+    padding: 20,
+    
   },
   title: {
-    fontSize: 24,
-    fontFamily: "InknutAntiqua_900Black",
-    marginTop: 20,
+    fontSize: 30,
+    fontFamily: 'InknutAntiqua_900Black',
+    padding: 10,
+    textAlign: 'center',
   },
   contentContainer: {
     flex: 1,
   },
   bodyText: {
-    fontSize: 9,
+    fontSize: 10,
     fontFamily: "InknutAntiqua_900Black",
     // alignItems: 'center',
     justifyContent: 'center',
@@ -91,13 +88,12 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 1,
     textAlign: 'center',
-    justifyContent: 'flex-start',
-    paddingRight: 50,
-    paddingLeft: 50,
-    paddingTop: 5,
-    paddingBottom: 1,
-    marginBottom: 10,
-    marginTop: 5
+    justifyContent: 'flex-end',
+    paddingRight: 20,
+    paddingLeft: 20,
+    // paddingTop: 5,
+    // paddingBottom: 1,
+    marginBottom: 5,
   },
   t2: {
     fontSize: 16,
@@ -105,7 +101,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   homeBg: {
-    flex:2,
+    flex:4,
     height: 380,
     resizeMode: 'contain',
   },
@@ -118,11 +114,11 @@ const styles = StyleSheet.create({
   cameraContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'flex-start'
   },
   touchable: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    
+    flex: 1,
+    justifyContent: 'flex-end',
+    // backgroundColor: '#fff'
   },
 });
