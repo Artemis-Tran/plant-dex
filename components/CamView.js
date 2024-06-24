@@ -1,4 +1,4 @@
-import { Camera, CameraType, CameraView, useCameraPermissions } from 'expo-camera/next';
+import { Camera, CameraType, CameraView, useCameraPermissions } from 'expo-camera';
 import React, { useState, useEffect, useRef } from 'react';
 import { SafeAreaView, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as Permissions from 'expo-permissions';
@@ -22,7 +22,7 @@ const CamView = ({navigation}) => {
   const takePicture = async () => {
 	  if (this.camera) {
 		  const data = await this.camera.takePictureAsync({quality:0.5});
-      // const data = await cameraRef.current.takePictureAsync({ quality: 0.5 });
+  
 		  console.log(data.uri);
       return data.uri;
 	  }
@@ -33,6 +33,7 @@ const CamView = ({navigation}) => {
     const uri = await takePicture();
     if (uri) {
         console.log("URI obtained, navigating to PlantDex with:", uri); // Debugging line
+        console.log("HADFLAJDFAJD;LFJADLFJAD;LKFJ;ALDSFJ;LADSJFLK;AJD;LFJADLK;FJ;ALDJF;L")
         navigation.navigate('PlantDex', { newImageUri: uri });
     } else {
         console.error("Failed to obtain URI.");

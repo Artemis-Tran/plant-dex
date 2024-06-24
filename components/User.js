@@ -53,10 +53,10 @@ import Navbar from './Navbar.js'
           </View>
       </Modal>
         <View style={styles.detailsContainer}>
-        <Text style={styles.detailsTitle}>Plants capture: 100</Text>
+        <Text style={styles.detailsTitle}>Plants capture: 0</Text>
         <Text></Text>
         <Text></Text>
-        <Text style={styles.detailsTitle}>Friends: 10</Text>
+        <Text style={styles.detailsTitle}>Friends: 0</Text>
         <Text></Text>
         <Text></Text>
         <Text style={styles.detailsTitle}> ✛ Friends</Text>
